@@ -1,0 +1,13 @@
+.thisApp{
+    margin: 10%;
+    color: #161632;
+    background-color: #FF9198;
+    box-shadow: 2px 4px 6px;
+    font-family: "helvetica";
+    font-size: 24pt;
+}
+
+.innards{
+    padding: 25%;
+    align-content: center;
+}

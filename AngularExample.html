@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>Angular examples</title>
+
+<link rel="stylesheet" type="text/css" href="angular.css">
+
+<body>
+
+<!--You can't run two ng-app at the same time-->    
+
+<div ng-app="myApp" ng-controller="testController" ng-init="quantity=20; cost= 15; person={firstname: 'Sid', lastname: 'Jay', number:67}; range=[10,20,40,80,160,320]" class="thisApp">
+
+    <div class="innards">
+        <!--angular uses templating similar to handlebars to target the DOM-->
+        <p>My name is {{person.firstname + " " + person.lastname}}.</p>
+
+        <p> Total is : {{quantity + cost}} </p>
+
+        <p> Rank is: {{person.number}} </p>
+
+        <p>
+            <ul>
+                <li ng-repeat="ranges in range"> 
+                    Range is : {{ranges}}
+                </li>
+            </ul>
+        </p>
+
+
+        <!--angular can change the DOM on the fly-->
+        <p> First name: <input type="text" ng-model="test.firstname"></p>
+
+        <p> Last name: <input type="text" ng-model="test.lastname"></p>
+
+        <p> enter amount: <input type="text" ng-model="test.fees"></p>
+
+        <!--apply filters using pipes and parameters-->
+        <p>You have entered: {{test.fullname() | lowercase}}</p>
+
+        <p> {{test.splitname() | uppercase}} </p>
+
+        <p>Total is : {{test.myfees() | currency}}</p>
+
+        <p>Click counter: {{myClicks}}</p>
+
+        <!--ng-click only seems to work with whole numbers in this example-->
+        <button ng-click="myClicks = myClicks + 2">Click</button>
+
+    </div>
+
+</div>
+
+<!--don't forget to use the Angular CDN-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
+</script>
+
+<!--this is the module file-->
+<script src="myApp.js"></script>
+
+<!--this is the controller file-->
+<script src="testController.js"></script>
+
+</body>    
+
+</html>
