@@ -41,12 +41,21 @@
 
         <p> {{test.splitname() | uppercase}} </p>
 
+        <p> {{test.pushname()}} </p>
+
         <p>Total is : {{test.myfees() | currency}}</p>
 
         <p>Click counter: {{myClicks}}</p>
 
         <!--ng-click only seems to work with whole numbers in this example-->
         <button ng-click="myClicks = myClicks + 2">Click</button>
+
+        <!--add another field using ng-controller-->
+        <div ng-controller="anothercontroller">
+            <p>{{another.newnumber}}</p>
+            
+            <p>{{another.crunchnumber()}}</p>
+        </div>
 
     </div>
 

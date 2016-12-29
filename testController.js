@@ -4,7 +4,7 @@ myApp.controller("testController", function($scope){
     $scope.test = {
         firstname: "Sid",
         lastname: "Jay",
-        range: {},
+        range: [],
         fees: 1234,
         myfees: function(){
             var feesObject;
@@ -20,6 +20,23 @@ myApp.controller("testController", function($scope){
             var splitObject;
             splitObject = $scope.test;
             return splitObject.firstname.split("") + " " + splitObject.lastname.split("");
+        },
+        pushname: function(){
+            var pushObject;
+            pushObject = $scope.test;
+            return pushObject.range.push(JSON.stringify(pushObject.firstname)) + " " + pushObject.range.push(JSON.stringify(pushObject.lastname));
+        }
+    };
+});
+
+//set up multiple controllers by declaring a new view via ng-controller
+myApp.controller("anothercontroller", function($scope){
+    $scope.another = {
+        newnumber: 15,
+        crunchnumber: function(){
+            var crunchObject;
+            crunchObject = $scope.another;
+            return crunchObject.newnumber * 2;
         }
     };
 });
