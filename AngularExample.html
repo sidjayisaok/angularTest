@@ -59,6 +59,62 @@
 
     </div>
 
+    <div ng-app="myApp" ng-controller="studentController">
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" ng-model="student.firstName"></td>
+            </tr>
+
+
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" ng-model="student.lastName"></td>
+            </tr>
+
+            <tr>
+                <td>Amount:</td>
+                <td><input type="text" ng-model="student.fees"</td>
+            </tr>
+
+            <tr>
+                <td>Course:</td>
+                <td><input type="text" ng-model="studentName"></td>
+            </tr>
+
+        </table>
+
+        <table>
+
+            <tr>
+                <td> Name (Uppercase):</td>
+                <td>{{student.studentName() | uppercase}}</td>
+            </tr>
+
+            <tr>
+                <td>Name (Lowercase):</td>
+                <td>{{student.studentName() | lowercase}}</td>
+            </tr>
+
+            <tr>
+                <td>Amount due:</td>
+                <td>{{student.fees | currency}}</td>
+            </tr>
+
+            <tr>
+                <td>Subject:</td>
+                <td>
+                    <ul>
+                        <li ng-repeat="subject in student.subjects | filter: subject.name | orderBy: 'marks'">
+                            {{subject.name + ', marks:' + subject.marks }}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
 </div>
 
 <!--don't forget to use the Angular CDN-->

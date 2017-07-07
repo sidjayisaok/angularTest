@@ -40,3 +40,22 @@ myApp.controller("anothercontroller", function($scope){
         }
     };
 });
+
+
+myApp.controller("studentController", function($scope){
+    $scope.student = {
+        firstName: "Dimon",
+        lastName: "Diamante",
+        fees: 8675309,
+        subjects:[
+            {name: 'Philosophy', marks: 86},
+            {name: 'Art', marks: 72},
+            {name: 'Gym', marks: 53}
+        ],
+        studentName: function(){
+            var studentObject;
+            studentObject = $scope.student;
+            return studentObject.firstName + " " + studentObject.lastName;
+        }
+    }
+});
