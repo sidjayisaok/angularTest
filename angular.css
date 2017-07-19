@@ -1,4 +1,4 @@
-.thisApp{
+.thisApp {
     margin: 10%;
     color: #161632;
     background-color: #FF9198;
@@ -7,7 +7,11 @@
     font-size: 24pt;
 }
 
-.innards{
+.innards {
     padding: 25%;
     align-content: center;
+}
+
+input {
+    min-width: 300px;
 }

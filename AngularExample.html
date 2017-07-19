@@ -79,7 +79,7 @@
 
             <tr>
                 <td>Course:</td>
-                <td><input type="text" ng-model="studentName"></td>
+                <td><input type="text" ng-model="student.course"></td>
             </tr>
 
         </table>
@@ -105,8 +105,8 @@
                 <td>Subject:</td>
                 <td>
                     <ul>
-                        <li ng-repeat="subject in student.subjects | filter: subject.name | orderBy: 'marks'">
-                            {{subject.name + ', marks:' + subject.marks }}
+                        <li ng-repeat="subject in student.subjects() | filter: subject.name | orderBy: 'marks'">
+                            {{subject.name + ' - marks : ' + subject.marks }}
                         </li>
                     </ul>
                 </td>

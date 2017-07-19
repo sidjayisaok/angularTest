@@ -41,21 +41,21 @@ myApp.controller("anothercontroller", function($scope){
     };
 });
 
+var myMarks = [{name: 'Philosophy', marks: 86}, {name: 'Art', marks: 72}, {name: 'Gym', marks: 53}];
 
 myApp.controller("studentController", function($scope){
     $scope.student = {
         firstName: "Dimon",
         lastName: "Diamante",
         fees: 8675309,
-        subjects:[
-            {name: 'Philosophy', marks: 86},
-            {name: 'Art', marks: 72},
-            {name: 'Gym', marks: 53}
-        ],
+        course: "ex: Physics, Chemistry, Math",
+        subjects: function(){
+            return myMarks;
+        },
         studentName: function(){
             var studentObject;
             studentObject = $scope.student;
             return studentObject.firstName + " " + studentObject.lastName;
         }
-    }
+    };
 });
